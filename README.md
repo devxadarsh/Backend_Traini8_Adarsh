@@ -55,5 +55,23 @@ mvn spring-boot:run
  
 - GET /api/training-centers: Get list of all stored training centers information
   - Response: List of training center details in JSON format. If no training centers exist, an empty list is returned.
+ 
+## JASON Code for API Testing
+
+  "centerName": "Traini8 Training Centera",
+  "centerCode": "ABC123456789",
+  "address": {
+    "detailedAddress": "123 Traini8 Street",
+    "city": "Exampleville",
+    "state": "Examplestate",
+    "pincode": "123456"
+  },
+  "studentCapacity": 3,
+  "coursesOffered": ["Course1", "Course2", "Course3"],
+  "createdOn": 1649438705000,
+  "contactEmail": "traini8@gmail.in",
+  "contactPhone": "1234567896"
+}
+
 
 
