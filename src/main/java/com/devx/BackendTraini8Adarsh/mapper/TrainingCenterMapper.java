@@ -17,7 +17,7 @@ public class TrainingCenterMapper {
         trainingCenter.setStudentCapacity(request.getStudentCapacity());
         trainingCenter.setCoursesOffered(request.getCoursesOffered());
         trainingCenter.setCreatedOn(request.getCreatedOn());
-        trainingCenter.setContactEmail(request.getContactEmail());
+        trainingCenter.setContactEmail(request.getContactEmail().toLowerCase());
         trainingCenter.setContactPhone(request.getContactPhone());
         return trainingCenter;
     }
