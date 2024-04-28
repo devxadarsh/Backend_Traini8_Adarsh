@@ -7,4 +7,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TrainingCenterRepository extends JpaRepository<TrainingCenter, Long> {
 
+    boolean existsByCenterCode(String centerCode);
+
+    boolean existsByContactPhone(String contactPhone);
+
+    boolean existsByContactEmail(String contactEmail);
 }

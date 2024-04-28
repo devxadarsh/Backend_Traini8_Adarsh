@@ -1,5 +1,6 @@
 package com.devx.BackendTraini8Adarsh.service.impl;
 
+import com.devx.BackendTraini8Adarsh.exception.DataAlreadyExistsException;
 import com.devx.BackendTraini8Adarsh.mapper.TrainingCenterMapper;
 import com.devx.BackendTraini8Adarsh.model.TrainingCenter;
 import com.devx.BackendTraini8Adarsh.repository.TrainingCenterRepository;
@@ -23,6 +24,13 @@ public class TrainingCenterServiceImpl implements TrainingCenterService {
     @Override
     public TrainingCenter createTrainingCenter(TrainingCenter request) {
         TrainingCenterMapper trainingCenterMapper = new TrainingCenterMapper();
+        if (trainingCenterRepository.existsByCenterCode(request.getCenterCode())) {
+            throw new DataAlreadyExistsException("Training center with code " + request.getCenterCode() + " already exists.");
+        }else if(trainingCenterRepository.existsByContactPhone(request.getContactPhone())){
+            throw new DataAlreadyExistsException("Contact number " + request.getContactPhone() + " is already linked with another Account.");
+        }else if(trainingCenterRepository.existsByContactEmail(request.getContactEmail())){
+            throw new DataAlreadyExistsException("Email Id " + request.getContactEmail() + " is already linked with another Account");
+        }
         return trainingCenterRepository.save(trainingCenterMapper.mapToTrainingCenter(request));
     }
 

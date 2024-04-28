@@ -1,4 +1,4 @@
-package com.devx.BackendTraini8Adarsh.exceptionfilter;
+package com.devx.BackendTraini8Adarsh.exception;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
